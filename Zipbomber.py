@@ -26,10 +26,7 @@ else:
 
 
 page = open('zipbomb/page.txt', 'w')
-k = 5000000000
-while k != 1:
-    k += -1
-    page.write("0")
+page.write('00'*1024*1024)
 
 with open('zipbomb/page.txt', 'rb') as f_in, gzip.open('zipbomb/page.7z', 'wb') as f_out:
     shutil.copyfileobj(f_in, f_out)
